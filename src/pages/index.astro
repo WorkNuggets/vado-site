@@ -2,6 +2,8 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Button from '~/components/ui/Button.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -11,6 +13,12 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Image from '~/components/common/Image.astro';
+
+const appStoreDownloadLink = 'https://github.com/onwidget/astrowind';
+const appStoreImg = '~/assets/images/app-store.png';
+const googlePlayImg = '~/assets/images/google-play.png';
+const googlePlayDownloadLink = 'https://github.com/onwidget/astrowind';
 
 const metadata = {
 	title: 'VADO - Touring homes made easy',
@@ -31,7 +39,7 @@ const metadata = {
 			},
 		]}
 		image={{
-			src: '~/assets/images/hero-image.png',
+			src: '/src/assets/images/hero-image.png',
 			alt: 'VADO Hero Image',
 		}}
 	>
@@ -45,15 +53,50 @@ const metadata = {
 		</Fragment>
 
 		<Fragment slot='subtitle' class='text-right'>
-			<i>Dove vai tu vado</i>
+			<i class='text-white'>Dove vai tu vado</i>
 			<br />
-			<span class='font-semibold'>Where you go I'll go</span>
+			<span class='font-semibold text-white'
+				>Where you go I'll go</span
+			>
 		</Fragment>
 	</Hero>
 
 	<!-- Note Widget ******************* -->
 
 	<Note />
+
+	<!-- Hero2 Intro Section *************** -->
+
+	<Hero2
+		actions={[
+			{
+				variant: 'primary',
+				target: '_blank',
+				text: 'Get Started',
+				href: 'https://github.com/onwidget/astrowind',
+			},
+		]}
+		image={{
+			src: '~/assets/images/unsplash/aerial.jpg',
+			alt: 'AstroWind Hero Image',
+		}}
+	>
+		<Fragment slot='title'>
+			<span class='text-accent dark:text-white highlight'
+				>Discover
+			</span>a better way grant <span
+				class='text-accent dark:text-white highlight italic'
+				>access</span
+			> to homes that makes touring <b class='uppercase'>easy</b>
+		</Fragment>
+
+		<Fragment slot='subtitle'>
+			Let us help you as you go into your next home adventure. We
+			believe that this process should be easy, because finding a
+			new home is a hard enough and long process as it is. You need
+			a good team in your corner, let’s work together!
+		</Fragment>
+	</Hero2>
 
 	<!-- Features Widget *************** -->
 
