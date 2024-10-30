@@ -1,0 +1,19 @@
+---
+interface Props {
+  label: string;
+  scrollTo: string;
+}
+
+const { label, scrollTo } = Astro.props;
+
+function handleScroll() {
+  const target = document.querySelector(scrollTo);
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+---
+
+<button class="btn btn-primary mt-4" on:click={handleScroll}>
+  {label}
+</button>
