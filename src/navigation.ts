@@ -151,6 +151,6 @@ export const footerData = {
 		},
 	],
 	footNote: `
-    Copywright &copy; 2024 · All rights reserved.
+    Copywright &copy; ${new Date().getFullYear()} · All rights reserved.
   `,
 };
