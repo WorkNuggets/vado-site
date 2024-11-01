@@ -4,9 +4,8 @@ import Hero from '~/components/widgets/Hero.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import Stats from '~/components/widgets/Stats.astro';
+import Brands from '~/components/widgets/Brands.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import heroImage from '~/assets/images/hero-image.png'
 
 const metadata = {
 	title: 'VADO - Tour Homes on Your Terms',
@@ -18,6 +17,7 @@ const metadata = {
 	<!-- Hero Widget ******************* -->
 
 	<Hero
+		id='homes'
 		actions={[
 			{
 				variant: 'primary',
@@ -27,8 +27,8 @@ const metadata = {
 			},
 		]}
 		image={{
-			src: heroImage,
-			alt: 'VADO Hero Image',
+			src: '~/assets/images/hero-image.png',
+			alt: 'Aerial shot rendered of a neighborhood',
 		}}
 	>
 		<Fragment slot='title'>
@@ -39,15 +39,15 @@ const metadata = {
 		</Fragment>
 
 		<Fragment slot='subtitle' class='text-right'>
-			<span class='text-white'
+			<span class='text-black dark:text-white'
 				>Self-guided home tours <span
-					class='font-semibold text-white'
+					class='font-semibold text-black dark:text-white'
 					>powered by AI</span
 				></span
 			>
 			-
 			<br />
-			<span class='text-white'
+			<span class='text-black dark:text-white'
 				>like having a <i><b>top agent</b></i> in your pockets</span
 			>
 		</Fragment>
@@ -56,9 +56,10 @@ const metadata = {
 	<!-- Hero2 Intro Section *************** -->
 
 	<Hero2
+		id='learn-more'
 		image={{
 			src: '~/assets/images/home/phone.png',
-			alt: 'AstroWind Hero Image',
+			alt: 'Screenshot of the phone',
 		}}
 	>
 		<Fragment slot='title'>
@@ -69,13 +70,6 @@ const metadata = {
 			> gives you the freedom and information you need to find your
 			<b class='text-accent'>perfect home</b>
 		</Fragment>
-
-		<!-- <Fragment slot='subtitle'>
-			Let us help you as you go into your next home adventure. We
-			believe that this process should be easy, because finding a
-			new home is a hard enough and long process as it is. You need
-			a good team in your corner, let’s work together!
-		</Fragment> -->
 	</Hero2>
 
 	<!-- Features Widget *************** -->
@@ -116,6 +110,7 @@ const metadata = {
 	<!-- Steps Widget ****************** -->
 
 	<Steps
+		id='how-it-works'
 		title='How It Works'
 		items={[
 			{
@@ -143,26 +138,45 @@ const metadata = {
 		}}
 	/>
 
-	<!-- Stats Widget ****************** -->
+	<!-- Brands Widget ****************** -->
 
-	<Stats
-		stats={[
-			{ title: 'Downloads', amount: '132K' },
-			{ title: 'Stars', amount: '24.8K' },
-			{ title: 'Forks', amount: '10.3K' },
-			{ title: 'Users', amount: '48.4K' },
+	<Brands
+		title='Partnerships & Collaborations'
+		subtitle='Work with our team of DISRUPTORS from and backed by world class institutions...'
+		icons={[]}
+		images={[
+			{
+				src: '~/assets/images/brands/intel.png',
+				alt: 'Intel',
+			},
+			{
+				src: '~/assets/images/brands/microsoft.png',
+				alt: 'Microsoft',
+			},
+			{
+				src: '~/assets/images/brands/pearx.png',
+				alt: 'PearX',
+			},
+			{
+				src: '~/assets/images/brands/penn.png',
+				alt: 'Penn State',
+			},
+			{
+				src: '~/assets/images/brands/y.png',
+				alt: 'Y-Combinator',
+			},
 		]}
 	/>
 
 	<!-- CallToAction Widget *********** -->
 
 	<CallToAction
+		id='coming-soon'
 		actions={[
 			{
 				variant: 'primary',
 				text: 'Download App',
-				href: 'https://github.com/onwidget/astrowind',
-				target: '_blank',
+				href: '/#coming-soon',
 				icon: 'tabler:download',
 			},
 		]}

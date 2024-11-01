@@ -12,14 +12,13 @@ export const headerData = {
 		},
 		{
 			text: 'Resources for Brokers',
-			href: '/#brokers',
+			href: '/#footer',
 		},
 	],
 	actions: [
 		{
 			text: 'Download App',
-			href: 'https://www.apple.com/app-store/',
-			target: '_blank',
+			href: '#',
 		},
 	],
 };
