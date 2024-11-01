@@ -1,12 +1,12 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Hero from '~/components/widgets/Hero.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import heroImage from '~/assets/images/hero-image.png'
 
 const metadata = {
 	title: 'VADO - Tour Homes on Your Terms',
@@ -27,7 +27,7 @@ const metadata = {
 			},
 		]}
 		image={{
-			src: '/src/assets/images/hero-image.png',
+			src: heroImage,
 			alt: 'VADO Hero Image',
 		}}
 	>

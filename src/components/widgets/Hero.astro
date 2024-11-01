@@ -1,7 +1,5 @@
 ---
-import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
-
 import type { Hero as Props } from '~/types';
 
 const {
@@ -26,8 +24,8 @@ const {
 	</div>
 
 	<div
-		class='relative max-w-7xl mx-auto px-4 sm:px-6 h-screen bg-cover bg-center flex items-center'
-		style={`background-image: url('${image?.src}'); filter: brightness(0.972) grayscale(20%);`}
+		class='relative mx-auto px-4 mt-0 sm:px-6 h-screen bg-cover bg-center flex items-center'
+		style={`background-color: hsl(210, 13%, 30%); background-image: url('${image?.src}'); filter: brightness(0.972) grayscale(20%);`}
 	>
 		<div class='text-center max-w-5xl mx-auto'>
 			{
