@@ -194,3 +194,27 @@ const metadata = {
 		<Fragment slot='subtitle'> Get started with VADO today</Fragment>
 	</CallToAction>
 </Layout>
+
+<style is:global>
+	.coming-soon-alert :is(button) {
+		background-color: var(--aw-color-primary);
+	}
+
+	.coming-soon-alert div:where(.swal2-icon).swal2-info {
+		border: 1px solid var(--aw-color-primary);
+		color: var(--aw-color-primary);
+	}
+
+	.dark .coming-soon-alert {
+		background-color: theme('colors.slate.600');
+		color: white;
+	}
+	.dark .coming-soon-alert :is(button) {
+		background-color: var(--aw-color-accent);
+	}
+
+	.dark .coming-soon-alert div:where(.swal2-icon).swal2-info {
+		border: 1px solid var(--aw-color-accent);
+		color: var(--aw-color-accent);
+	}
+</style>

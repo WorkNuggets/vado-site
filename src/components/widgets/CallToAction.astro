@@ -52,7 +52,8 @@ const {
 							<div class='flex w-full sm:w-auto'>
 								<Button
 									{...(action || {})}
-									class='w-full sm:mb-0 cursor-not-allowed'
+									class='w-full sm:mb-0'
+									id='cta-button'
 								/>
 							</div>
 						))
@@ -64,3 +65,8 @@ const {
 		}
 	</div>
 </WidgetWrapper>
+
+<script>
+	import { setupAlert } from '~/utils/showAlert.js';
+	setupAlert('cta-button');
+</script>

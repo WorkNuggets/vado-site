@@ -18,7 +18,7 @@ export const headerData = {
 	actions: [
 		{
 			text: 'Download App',
-			href: '#',
+			href: '#homes',
 		},
 	],
 };
