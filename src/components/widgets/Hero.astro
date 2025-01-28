@@ -89,11 +89,15 @@ const imgScale = 1;
 								<Fragment set:html={image} />
 							) : (
 								<Image
-								class="mx-auto rounded-md !w-full md:!w-1/2"
-									sizes='(max-width: 767px) 800px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px'
+									class='mx-auto rounded-md w-full'
+									widths={[
+										400, 768, 1024,
+										2040,
+									]}
+									sizes='(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px'
 									loading='eager'
-									width={1124 * imgScale}
-									height={2500 * imgScale}
+									width={1024 * imgScale}
+									height={576 * imgScale}
 									{...image}
 								/>
 							)}
