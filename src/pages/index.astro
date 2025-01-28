@@ -8,7 +8,7 @@ import Brands from '~/components/widgets/Brands.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-	title: 'VADO - Tour Homes on Your Terms',
+	title: 'VADO - Tour Homes at Your Pace',
 	ignoreTitleTemplate: true,
 };
 ---
@@ -32,23 +32,18 @@ const metadata = {
 		}}
 	>
 		<Fragment slot='title'>
-			Tour Homes on Your Terms with
+			Tour Homes at Your Pace, Get Expert Insights
 			<span class='text-accent dark:text-white highlight'>
-				VADO</span
-			>
+				INSTANTLY
+				</span>
 		</Fragment>
 
 		<Fragment slot='subtitle' class='text-right'>
 			<span class='text-black dark:text-white'
-				>Self-guided home tours <span
+				>
+				<span
 					class='font-semibold text-black dark:text-white'
-					>powered by AI</span
-				></span
-			>
-			-
-			<br />
-			<span class='text-black dark:text-white'
-				>like having a <i><b>top agent</b></i> in your pockets</span
+					>VADO</span> gives you the freedom and information you need to find your perfect home</span
 			>
 		</Fragment>
 	</Hero>
@@ -114,26 +109,26 @@ const metadata = {
 		title='How It Works'
 		items={[
 			{
-				title: 'Step 1: <span class="font-medium">Browse Listings</span>',
+				title: 'Step 1: <span class="font-medium">Scan QR Code</span>',
 				description:
-					'Search available homes in your area. If a house is open, you can begin touring! If not, no worries, reserving a spot is just as easy.',
-				icon: 'tabler:template',
+					'Vado onboards everyone through its easy sign-in feature, so that both the buyer and the seller are instantly connected on the app.',
+				icon: 'tabler:qrcode',
 			},
 			{
-				title: 'Step 2: <span class="font-medium">Arrive & Enter</span>',
+				title: 'Step 2: <span class="font-medium">Explore & Learn</span>',
 				description:
-					'Use our secure digital access system. Vado verifies every home entry, so that both the buyer and the seller are as safe as possible.',
+					'Tour at your own pace with AI guidance. Ask Vado questions, take notes for you, and give you in-depth insights.',
 				icon: 'tabler:door-enter',
 			},
 			{
-				title: 'Step 3: <span class="font-medium">Explore & Learn</span>',
+				title: 'Step 3: <span class="font-medium">Follow-Up and Discover More</span>',
 				description:
-					'Tour at your own pace with AI guidance. Go in-depth or as cursory as you like',
-				icon: 'tabler:hearts',
+					'Using insights from previous home tours, VADO will your agent match you to your dream home.',
+					icon: 'tabler:template',
 			},
 		]}
 		image={{
-			src: '~/assets/images/home/home.jpg',
+			src: '~/assets/images/how-it-works.png',
 			alt: 'Steps image',
 		}}
 	/>

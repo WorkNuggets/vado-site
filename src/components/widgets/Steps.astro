@@ -20,7 +20,7 @@ const {
 } = Astro.props;
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl sm:my-32 ${classes?.container ?? ''}`} bg={bg}>
   <div class:list={['flex flex-col gap-8 md:gap-12', { 'md:flex-row-reverse': isReversed }, { 'md:flex-row': image }]}>
     <div class:list={['md:py-4 md:self-center', { 'md:basis-1/2': image }, { 'w-full': !image }]}>
       <Headline
@@ -42,7 +42,7 @@ const {
             <Fragment set:html={image} />
           ) : (
             <Image
-              class="inset-0 object-cover object-top w-full rounded-md shadow-lg md:absolute md:h-full bg-gray-400 dark:bg-slate-700"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover object-top w-fit h-auto rounded-md shadow-lg bg-gray-400 dark:bg-slate-700 scale-150"
               widths={[400, 768]}
               sizes="(max-width: 768px) 100vw, 432px"
               width={432}
