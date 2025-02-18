@@ -63,7 +63,7 @@ const flexDirection = isImageLeft ? 'lg:flex-row-reverse' : 'lg:flex-row';
               <Fragment set:html={image} />
             ) : (
               <Image
-                class={`mx-auto rounded-md w-full !object-contain ${isImageLeft ? 'object-left' : 'object-right'}`}
+              class={`mx-auto rounded-md w-full !object-contain`}
                 widths={[400, 768, 1024, 2040]}
                 sizes='(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px'
                 loading='eager'

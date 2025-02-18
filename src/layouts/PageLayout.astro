@@ -14,9 +14,9 @@ const { metadata } = Astro.props;
 
 <Layout metadata={metadata}>
 	<slot name='header'>
-		<Header {...headerData} isSticky showToggleTheme />
+		<Header {...headerData} isSticky />
 	</slot>
-	<main style="margin-top: -95px">
+	<main style='margin-top: -95px'>
 		<slot />
 	</main>
 	<slot name='footer'>
