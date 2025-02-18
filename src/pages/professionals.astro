@@ -6,6 +6,7 @@ import Brands from '~/components/widgets/Brands.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Diagonal from '~/components/widgets/Diagonal.astro'
 import Button from '~/components/ui/Button.astro';
+import Features from '~/components/widgets/Features.astro';
 
 const metadata = {
 	title: 'VADO - Close Properties Without Speaking a Word',
@@ -26,7 +27,7 @@ const metadata = {
 			},
 		]}
 		image={{
-			src: '~/assets/images/hero-image.png',
+			src: '~/assets/images/suburb.png',
 			alt: 'Aerial shot rendered of a neighborhood',
 		}}
 	>
@@ -109,6 +110,41 @@ As a user walks into a home and scans our QR code, they are sent to a customizab
 	<Button>Try it out</Button>
 </Fragment>
 </Hero2>
+
+	<!-- Features Widget *************** -->
+
+	<Features
+		id='features'
+		tagline='<span class="text-[#173151]">Features</span>'
+		title='<h2 class="text-accent dark:text-white text-6xl font-bold">What VADO has to Offer</h2>'
+		subtitle='<b>VADO has everything you as a listing agent or property manager need to host a successful open house, allowing potential renters or buyers imagine their dream home</b>'
+		items={[
+			{
+				title: 'Personalized Follow-ups',
+				description:
+					'For each tourer, VADO uncovers what leads look for and recommends you the best way to reach out',
+				icon: 'tabler:mail-ai',
+			},
+			{
+				title: 'Lead Tracker',
+				description:
+					'VADO keeps track of every lead that goes through the homes, so you don’t miss anyone',
+					icon: 'tabler:layout-dashboard',
+				},
+				{
+					title: 'An Assistant Broker at Your Service',
+					description:
+					'VADO AI replicates you through your marketing materials, so it can sell tourers the same way you would, just through their phones',
+					icon: 'tabler:message-chatbot',
+			},
+			{
+				title: 'Seamless Setup',
+				description:
+				'All you need to do to setup the open house app is upload all previously made marketing materials for the home. No extra work needed',
+				icon: 'tabler:settings-cog',
+			},
+		]}
+	/>
 
 	<!-- Brands Widget ****************** -->
 
