@@ -1,7 +1,7 @@
 {
 	"name": "@onwidget/astrowind",
 	"version": "1.0.0-beta.48",
-	"description": "Vado.com is a real estate property technology based company for making home touring more simple",
+	"description": "vado.com is a real estate property technology based company for making home touring more simple",
 	"type": "module",
 	"private": true,
 	"engines": {

@@ -78,7 +78,7 @@ const metadata = {
 		id='features'
 		tagline='Features'
 		title='What VADO has to offer'
-		subtitle='Vado has everything you need as an independent homebuyer, allowing you to tour your dream home the way you want and whenever you feel'
+		subtitle='VADO has everything you need as an independent homebuyer, allowing you to tour your dream home the way you want and whenever you feel'
 		items={[
 			{
 				title: 'Self-Guided Tours',
@@ -116,13 +116,13 @@ const metadata = {
 			{
 				title: 'Step 1: <span class="font-medium">Scan QR Code</span>',
 				description:
-					'Vado onboards everyone through its easy sign-in feature, so that both the buyer and the seller are instantly connected on the app',
+					'VADO onboards everyone through its easy sign-in feature, so that both the buyer and the seller are instantly connected on the app',
 				icon: 'tabler:qrcode',
 			},
 			{
 				title: 'Step 2: <span class="font-medium">Explore & Learn</span>',
 				description:
-					'Tour at your own pace with AI guidance. Ask Vado questions, take notes for you, and give you in-depth insights',
+					'Tour at your own pace with AI guidance. Ask VADO questions, take notes for you, and give you in-depth insights',
 				icon: 'tabler:door-enter',
 			},
 			{
@@ -218,3 +218,9 @@ const metadata = {
 		color: var(--aw-color-accent);
 	}
 </style>
+
+<script>
+	import { setupAlert } from '~/utils/showAlert.js';
+	setupAlert('cta-button');
+	setupAlert('cta-button-nav');
+</script>
