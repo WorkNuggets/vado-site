@@ -12,7 +12,7 @@ export const headerData = {
 		},
 		{
 			text: 'Resources for Brokers',
-			href: '/#footer',
+			href: '/professionals',
 		},
 	],
 	actions: [
