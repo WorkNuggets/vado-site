@@ -5,7 +5,6 @@ import Hero2 from '~/components/widgets/Hero2.astro';
 import Brands from '~/components/widgets/Brands.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Diagonal from '~/components/widgets/Diagonal.astro'
-import Button from '~/components/ui/Button.astro';
 import Features from '~/components/widgets/Features.astro';
 
 const metadata = {
@@ -92,7 +91,7 @@ As a user walks into a home and scans our QR code, they are sent to a customizab
 <b>Customer concerns you didn’t know about? Now you can address them quickly.</b> You know how homebuyers won’t mention their concerns or true thoughts to you? Well you can now proactively address their real thoughts, thanks to our proprietary tech, which takes into account their notes, photos taken, and other tour data to know what they’re truly thinking.
 	</Fragment>
 <Fragment slot='actions'>
-	<Button>See What VADO Can do for Your Listings</Button>
+	<a id="vadoCanDoForYou" class="btn-secondary">See What VADO Can do for Your Listings</a>
 </Fragment>
 </Hero2>
 
@@ -110,7 +109,7 @@ As a user walks into a home and scans our QR code, they are sent to a customizab
 		<b>Clone yourself, multiply your reach.</b> We can customize the AI in our tour app so that it can sell the exact same way you sell a home. When a potential buyer asks a question, it will answer it in the exact same way you’d answer it. Talks to the client on your behalf, without you having to open your mouth 
 	</Fragment>
 <Fragment slot='actions'>
-	<Button>Try it out</Button>
+	<a id="tryItOut" class="btn-primary">Try it out</a>
 </Fragment>
 </Hero2>
 
@@ -184,20 +183,14 @@ As a user walks into a home and scans our QR code, they are sent to a customizab
 
 	<!-- CallToAction Widget *********** -->
 
-	<CallToAction
-		id='coming-soon'
-		actions={[
-			{
-				variant: 'primary',
-				text: 'Get Started',
-				type: 'button',
-			},
-		]}
-	>
-		<Fragment slot='title'>
-			Make your listings sell for you...
-		</Fragment>
-	</CallToAction>
+	<CallToAction id='coming-soon'>
+  <Fragment slot='title'>
+    Make your listings sell for you...
+  </Fragment>
+  <Fragment slot='subtitle'>
+    <a id="cta-link" class='btn-primary'>Get Started</a>
+  </Fragment>
+</CallToAction>
 </Layout>
 
 <style is:global>
@@ -223,3 +216,26 @@ As a user walks into a home and scans our QR code, they are sent to a customizab
 		color: var(--aw-color-accent);
 	}
 </style>
+
+<script>
+	import { setupAlert } from '~/utils/showAlert';
+
+	const alertConfig = {
+  title: '',
+		padding: "2em",
+		html: `
+    <h2 class="text-3xl font-bold">The future of open houses is almost ready for launch!</h2>
+				<br />
+				<h2 class="text-3xl font-bold">Be the first to know</h2>
+				<br />
+				<br />
+				<a href='https://forms.gle/Kf2yXRqwVniwkfkJA' target='_blank' class='btn-secondary'>Join Waitlist</a>
+  `,
+icon: 'none',
+showConfirmButton: false,
+	};
+
+	setupAlert("tryItOut", alertConfig);
+	setupAlert("vadoCanDoForYou", alertConfig);
+	setupAlert("cta-link", alertConfig);
+</script>
