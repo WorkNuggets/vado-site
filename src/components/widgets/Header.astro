@@ -44,6 +44,9 @@ const {
 } = Astro.props;
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
+
+const test = Astro.url.pathname;
+console.log('this is pathname', test);
 ---
 
 <header
@@ -163,7 +166,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 			<div
 				class='items-center flex justify-between w-full md:w-auto'
 			>
-			<!-- Toggle Theme Button -->
+				<!-- Toggle Theme Button -->
 				<div class='flex'>
 					{
 						showToggleTheme && (
@@ -189,12 +192,20 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 						<span
 							class='ml-4 rtl:ml-0 rtl:mr-4'
 							id='cta-button-header'>
-							{actions.map((btnProps) => (
-								<Button
-									{...btnProps}
-									class='ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto'
-								/>
-							))}
+							{Astro.url.pathname.includes(
+								'professionals'
+							) ? (
+								<Button id="navButton" class='btn-secondary ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto'>
+									Try VADO!
+								</Button>
+							) : (
+								actions.map((btnProps) => (
+									<Button
+										{...btnProps}
+										class='ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto'
+									/>
+								))
+							)}
 						</span>
 					) : (
 						''
@@ -206,6 +217,22 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 </header>
 
 <script>
-	import { setupAlert } from '~/utils/showAlert.js';
-	setupAlert('cta-button-header');
+	import { setupAlert } from '~/utils/showAlert';
+
+	const alertConfig = {
+  title: '',
+		padding: "2em",
+		html: `
+    <h2 class="text-3xl font-bold">The future of open houses is almost ready for launch!</h2>
+				<br />
+				<h2 class="text-3xl font-bold">Be the first to know</h2>
+				<br />
+				<br />
+				<a href='https://forms.gle/Kf2yXRqwVniwkfkJA' target='_blank' class='btn-secondary'>Join Waitlist</a>
+  `,
+icon: 'none',
+showConfirmButton: false,
+	};
+
+	setupAlert("navButton", alertConfig);
 </script>
