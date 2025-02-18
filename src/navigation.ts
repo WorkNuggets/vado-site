@@ -18,7 +18,7 @@ export const headerData = {
 	actions: [
 		{
 			text: 'Download App',
-			id: 'cta-button-nav',
+			id: 'ctaButtonNav',
 			type: 'button',
 		},
 	],
