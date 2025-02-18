@@ -1,0 +1,32 @@
+---
+export interface Props {
+  id?: string;
+  titleAlign?: 'left' | 'center' | 'right';
+  paragraphAlign?: 'left' | 'center' | 'right';
+}
+
+const { id, titleAlign = 'center', paragraphAlign = 'center' } = Astro.props;
+
+const titleClasses = {
+  left: "text-left",
+  center: "text-center",
+  right: "text-right",
+}[titleAlign];
+
+const paragraphClasses = {
+  left: "text-left float-left",
+  center: "text-center",
+  right: "text-right float-right",
+}[paragraphAlign];
+---
+
+<section id={id} class="w-full py-16 px-8 flex justify-center">
+  <div class="max-w-5xl">
+    <h2 class={`w-[90%] text-6xl font-bold leading-[62px] text-gray-900 dark:text-white ${titleClasses}`}>
+      <slot name="title"></slot>
+    </h2>
+    <p class={`font-normal mt-14 text-xl leading-[32px] text-gray-600 dark:text-gray-300 w-[91%] ${paragraphClasses}`}>
+      <slot name="paragraph"></slot>
+    </p>
+  </div>
+</section>

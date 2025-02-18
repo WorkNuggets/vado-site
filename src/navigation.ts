@@ -11,7 +11,7 @@ export const headerData = {
 			href: '/#how-it-works',
 		},
 		{
-			text: 'Resources for Brokers',
+			text: 'For RE Professionals',
 			href: '/professionals',
 		},
 	],
