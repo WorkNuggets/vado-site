@@ -26,7 +26,8 @@ pnpm-lock.yaml
 .cache/
 
 # Astro telemetry data
-.astro/
+.astro/*
+.astro/settings.json
 
 # Output of the TypeScript compiler
 *.tsbuildinfo
@@ -43,6 +44,7 @@ pnpm-lock.yaml
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
+.pnpm-store/
 node_modules/.modules.yaml
 node_modules/.modules.yaml
 node_modules/.modules.yaml
