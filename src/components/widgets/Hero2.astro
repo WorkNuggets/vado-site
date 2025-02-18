@@ -26,7 +26,7 @@ const flexDirection = isImageLeft ? 'lg:flex-row-reverse' : 'lg:flex-row';
       {bg ? <Fragment set:html={bg} /> : null}
     </slot>
   </div>
-  <div class='relative max-w-7xl mx-auto px-4 sm:px-6'>
+  <div class='relative max-w-5xl w-[85vw] mx-auto px-4 sm:px-6'>
     <div class='pt-0 md:pt-[76px] pointer-events-none'></div>
     <div class={`py-12 md:py-20 lg:py-0 lg:flex lg:items-center lg:h-screen lg:gap-8 ${flexDirection}`}>
       <div class='basis-1/2 text-center lg:text-left pb-10 md:pb-16 mx-auto'>
@@ -63,7 +63,7 @@ const flexDirection = isImageLeft ? 'lg:flex-row-reverse' : 'lg:flex-row';
               <Fragment set:html={image} />
             ) : (
               <Image
-                class='mx-auto rounded-md w-full !object-contain'
+                class={`mx-auto rounded-md w-full !object-contain ${isImageLeft ? 'object-left' : 'object-right'}`}
                 widths={[400, 768, 1024, 2040]}
                 sizes='(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px'
                 loading='eager'
