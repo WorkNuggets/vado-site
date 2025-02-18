@@ -2,10 +2,10 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
-import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Brands from '~/components/widgets/Brands.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Diagonal from '~/components/widgets/Diagonal.astro'
 
 const metadata = {
 	title: 'VADO - Close Properties Without Speaking a Word',
@@ -42,56 +42,57 @@ const metadata = {
 		</Fragment>
 	</Hero>
 
-	<!-- Hero2 Intro Section *************** -->
+	<!-- Diagonal Title and Paragraph Section (Connect w/5x the potential) *************** -->
+
+	<Diagonal id="learn-more" titleAlign="left" paragraphAlign="right">
+  <Fragment slot="title">
+    <span class="text-accent dark:text-white">
+      Connect</span> with 5x the potential buyers / renters as they tour your open house, even if they try avoiding you
+  </Fragment>
+  
+  <Fragment slot="paragraph">
+			Open houses are the #2 source of lead generation for rentals or home purchases. Yet, despite this, us as listing agents can only talk to maybe 20% of people who walk through the doors. Most actively try avoiding us, and stay on their phones the whole time. <b>We’re reimagining the way people tour homes, so that while they stay on their phones, you still can reach them.</b>
+  </Fragment>
+</Diagonal>
+
+	<!-- Facilitating Smart Follow Ups *************** -->
 
 	<Hero2
-		id='learn-more'
-	>
-		<Fragment slot='title'>
-			<span class='text-accent dark:text-white'>
-				Connect</span
-			> with 5x the potential buyers / renters as they tour your open house, even if they try avoiding you
-   <!-- , get expert insights <i>instantly. </i><br /><span
-				class='text-accent dark:text-white highlight'>VADO</span
-			> gives you the freedom and information you need to find your
-			<b class='text-accent'>perfect home</b> -->
-		</Fragment>
-	</Hero2>
+	id='learn-more'
+	image={{
+		src: '~/assets/images/screenshots/tourWithRoomTabs.png',
+		alt: 'Screenshot of the phone',
+	}}
+>
+	<Fragment slot='title'>
+		<span class='text-accent dark:text-white'>
+			Facilitating smart follow-ups</span
+		>, <i>personalized</i> for every tourer
+	</Fragment>
+	<Fragment slot='subtitle'>
+As a user walks into a home and scans our QR code, they are sent to a customizable portal for the home, where they can add notes and pictures. We take note of this, and send you, the lister, smart insights, such as their thoughts and preferences, so that you can tailor your follow-ups. You don’t need to remember a thing, our app remembers it for you.
+	</Fragment>
+</Hero2>
 
-	<!-- Features Widget *************** -->
+	<!-- Customer concerns you didn't know about? *************** -->
 
-	<Features
-		id='features'
-		tagline='Features'
-		title='What VADO has to offer'
-		subtitle='Vado has everything you need as an independent homebuyer, allowing you to tour your dream home the way you want and whenever you feel'
-		items={[
-			{
-				title: 'Self-Guided Tours',
-				description:
-					'Tour open homes at your own pace, no pressure, no rush',
-				icon: 'tabler:home',
-			},
-			{
-				title: 'AI-Powered Insights',
-				description:
-					'What’s the potential ARV of this room? Can I install a deck here? Get instant answers about the home and neighborhood from our AI assistant',
-				icon: 'tabler:brain',
-			},
-			{
-				title: 'AR Visualization',
-				description:
-					'Use augmented reality to visualize renovations and furniture placement',
-				icon: 'tabler:augmented-reality',
-			},
-			{
-				title: 'Easy Follow-Up',
-				description:
-					'When you finish touring, easily continue the conversation with the listing agents',
-				icon: 'tabler:message-circle',
-			},
-		]}
-	/>
+	<Hero2
+	imagePosition='left'
+	id='learn-more'
+	image={{
+		src: '~/assets/images/screenshots/tourWithRoomTabs.png',
+		alt: 'Screenshot of the phone',
+	}}
+>
+	<Fragment slot='title'>
+		<span class='text-accent dark:text-white'>
+			Facilitating smart follow-ups</span
+		>, <i>personalized</i> for every tourer
+	</Fragment>
+	<Fragment slot='subtitle'>
+As a user walks into a home and scans our QR code, they are sent to a customizable portal for the home, where they can add notes and pictures. We take note of this, and send you, the lister, smart insights, such as their thoughts and preferences, so that you can tailor your follow-ups. You don’t need to remember a thing, our app remembers it for you.
+	</Fragment>
+</Hero2>
 
 	<!-- Steps Widget ****************** -->
 
