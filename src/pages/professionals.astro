@@ -1,0 +1,206 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Brands from '~/components/widgets/Brands.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+	title: 'VADO - Close Properties Without Speaking a Word',
+	ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+	<!-- Hero Widget ******************* -->
+
+	<Hero
+		id='homes'
+		actions={[
+			{
+				variant: 'primary',
+				text: 'Try VADO!',
+				href: '/professionals#vado',
+			},
+		]}
+		image={{
+			src: '~/assets/images/hero-image.png',
+			alt: 'Aerial shot rendered of a neighborhood',
+		}}
+	>
+		<Fragment slot='title'>
+			Closing Proprties Without Speaking a Word
+		</Fragment>
+
+		<Fragment slot='subtitle' class='text-right'>
+			<span class='text-black dark:text-white'
+				>Reach everyone that goes through your open houses, 5x
+				your leads and more effectively facilitate sales and
+				rentals.
+		</Fragment>
+	</Hero>
+
+	<!-- Hero2 Intro Section *************** -->
+
+	<Hero2
+		id='learn-more'
+	>
+		<Fragment slot='title'>
+			<span class='text-accent dark:text-white'>
+				Connect</span
+			> with 5x the potential buyers / renters as they tour your open house, even if they try avoiding you
+   <!-- , get expert insights <i>instantly. </i><br /><span
+				class='text-accent dark:text-white highlight'>VADO</span
+			> gives you the freedom and information you need to find your
+			<b class='text-accent'>perfect home</b> -->
+		</Fragment>
+	</Hero2>
+
+	<!-- Features Widget *************** -->
+
+	<Features
+		id='features'
+		tagline='Features'
+		title='What VADO has to offer'
+		subtitle='Vado has everything you need as an independent homebuyer, allowing you to tour your dream home the way you want and whenever you feel'
+		items={[
+			{
+				title: 'Self-Guided Tours',
+				description:
+					'Tour open homes at your own pace, no pressure, no rush',
+				icon: 'tabler:home',
+			},
+			{
+				title: 'AI-Powered Insights',
+				description:
+					'What’s the potential ARV of this room? Can I install a deck here? Get instant answers about the home and neighborhood from our AI assistant',
+				icon: 'tabler:brain',
+			},
+			{
+				title: 'AR Visualization',
+				description:
+					'Use augmented reality to visualize renovations and furniture placement',
+				icon: 'tabler:augmented-reality',
+			},
+			{
+				title: 'Easy Follow-Up',
+				description:
+					'When you finish touring, easily continue the conversation with the listing agents',
+				icon: 'tabler:message-circle',
+			},
+		]}
+	/>
+
+	<!-- Steps Widget ****************** -->
+
+	<Steps
+		id='how-it-works'
+		title='How It Works'
+		items={[
+			{
+				title: 'Step 1: <span class="font-medium">Scan QR Code</span>',
+				description:
+					'Vado onboards everyone through its easy sign-in feature, so that both the buyer and the seller are instantly connected on the app',
+				icon: 'tabler:qrcode',
+			},
+			{
+				title: 'Step 2: <span class="font-medium">Explore & Learn</span>',
+				description:
+					'Tour at your own pace with AI guidance. Ask Vado questions, take notes for you, and give you in-depth insights',
+				icon: 'tabler:door-enter',
+			},
+			{
+				title: 'Step 3: <span class="font-medium">Follow-Up and Discover More</span>',
+				description:
+					'Using insights from previous home tours, VADO will your agent match you to your dream home',
+				icon: 'tabler:bulb',
+			},
+		]}
+		image={{
+			src: '~/assets/images/home/screenshot.png',
+			alt: 'Steps image',
+		}}
+	/>
+
+	<!-- Brands Widget ****************** -->
+
+	<Brands
+		title='Partnerships & Collaborations'
+		subtitle='Work with our team of DISRUPTORS from and backed by world class institutions'
+		icons={[]}
+		images={[
+			{
+				src: '~/assets/images/brands/berkeley.png',
+				alt: 'Berkeley',
+			},
+			{
+				src: '~/assets/images/brands/hp.png',
+				alt: 'HP',
+			},
+			{
+				src: '~/assets/images/brands/intel.png',
+				alt: 'Intel',
+			},
+			{
+				src: '~/assets/images/brands/microsoft.png',
+				alt: 'Microsoft',
+			},
+			{
+				src: '~/assets/images/brands/penn.png',
+				alt: 'Penn State',
+			},
+			{
+				src: '~/assets/images/brands/steam.png',
+				alt: 'Steam',
+			},
+		]}
+	/>
+
+	<!-- CallToAction Widget *********** -->
+
+	<CallToAction
+		id='coming-soon'
+		actions={[
+			{
+				variant: 'primary',
+				text: 'Download App',
+				href: '/#coming-soon',
+				icon: 'tabler:download',
+			},
+		]}
+	>
+		<Fragment slot='title'>
+			Ready to find your <br class='block sm:hidden' /><span
+				class='sm:whitespace-nowrap'>dream home?</span
+			>
+		</Fragment>
+
+		<Fragment slot='subtitle'> Get started with VADO today</Fragment>
+	</CallToAction>
+</Layout>
+
+<style is:global>
+	.coming-soon-alert :is(button) {
+		background-color: var(--aw-color-primary);
+	}
+
+	.coming-soon-alert div:where(.swal2-icon).swal2-info {
+		border: 1px solid var(--aw-color-primary);
+		color: var(--aw-color-primary);
+	}
+
+	.dark .coming-soon-alert {
+		background-color: theme('colors.slate.600');
+		color: white;
+	}
+	.dark .coming-soon-alert :is(button) {
+		background-color: var(--aw-color-accent);
+	}
+
+	.dark .coming-soon-alert div:where(.swal2-icon).swal2-info {
+		border: 1px solid var(--aw-color-accent);
+		color: var(--aw-color-accent);
+	}
+</style>
