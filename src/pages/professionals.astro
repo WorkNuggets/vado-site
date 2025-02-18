@@ -2,10 +2,10 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
-import Steps from '~/components/widgets/Steps.astro';
 import Brands from '~/components/widgets/Brands.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Diagonal from '~/components/widgets/Diagonal.astro'
+import Button from '~/components/ui/Button.astro';
 
 const metadata = {
 	title: 'VADO - Close Properties Without Speaking a Word',
@@ -22,7 +22,7 @@ const metadata = {
 			{
 				variant: 'primary',
 				text: 'Try VADO!',
-				href: '/professionals#vado',
+				href: '#',
 			},
 		]}
 		image={{
@@ -80,56 +80,40 @@ As a user walks into a home and scans our QR code, they are sent to a customizab
 	imagePosition='left'
 	id='learn-more'
 	image={{
-		src: '~/assets/images/screenshots/tourWithRoomTabs.png',
+		src: '~/assets/images/screenshots/Previous Living Room notes.png',
 		alt: 'Screenshot of the phone',
 	}}
 >
-	<Fragment slot='title'>
-		<span class='text-accent dark:text-white'>
-			Facilitating smart follow-ups</span
-		>, <i>personalized</i> for every tourer
-	</Fragment>
 	<Fragment slot='subtitle'>
-As a user walks into a home and scans our QR code, they are sent to a customizable portal for the home, where they can add notes and pictures. We take note of this, and send you, the lister, smart insights, such as their thoughts and preferences, so that you can tailor your follow-ups. You don’t need to remember a thing, our app remembers it for you.
+<b>Customer concerns you didn’t know about? Now you can address them quickly.</b> You know how homebuyers won’t mention their concerns or true thoughts to you? Well you can now proactively address their real thoughts, thanks to our proprietary tech, which takes into account their notes, photos taken, and other tour data to know what they’re truly thinking.
 	</Fragment>
+<Fragment slot='actions'>
+	<Button>See What VADO Can do for Your Listings</Button>
+</Fragment>
 </Hero2>
 
-	<!-- Steps Widget ****************** -->
+	<!-- Clone yourself, multiply your research ****************** -->
 
-	<Steps
-		id='how-it-works'
-		title='How It Works'
-		items={[
-			{
-				title: 'Step 1: <span class="font-medium">Scan QR Code</span>',
-				description:
-					'Vado onboards everyone through its easy sign-in feature, so that both the buyer and the seller are instantly connected on the app',
-				icon: 'tabler:qrcode',
-			},
-			{
-				title: 'Step 2: <span class="font-medium">Explore & Learn</span>',
-				description:
-					'Tour at your own pace with AI guidance. Ask Vado questions, take notes for you, and give you in-depth insights',
-				icon: 'tabler:door-enter',
-			},
-			{
-				title: 'Step 3: <span class="font-medium">Follow-Up and Discover More</span>',
-				description:
-					'Using insights from previous home tours, VADO will your agent match you to your dream home',
-				icon: 'tabler:bulb',
-			},
-		]}
-		image={{
-			src: '~/assets/images/home/screenshot.png',
-			alt: 'Steps image',
-		}}
-	/>
+	<Hero2
+	imagePosition='right'
+	id='learn-more'
+	image={{
+		src: '~/assets/images/home/screenshot.png',
+		alt: 'Screenshot of the phone',
+	}}
+>
+	<Fragment slot='subtitle'>
+		<b>Clone yourself, multiply your reach.</b> We can customize the AI in our tour app so that it can sell the exact same way you sell a home. When a potential buyer asks a question, it will answer it in the exact same way you’d answer it. Talks to the client on your behalf, without you having to open your mouth 
+	</Fragment>
+<Fragment slot='actions'>
+	<Button>Try it out</Button>
+</Fragment>
+</Hero2>
 
 	<!-- Brands Widget ****************** -->
 
 	<Brands
-		title='Partnerships & Collaborations'
-		subtitle='Work with our team of DISRUPTORS from and backed by world class institutions'
+		title='Work with our team of DISRUPTORS from and backed by world class institutions'
 		icons={[]}
 		images={[
 			{
@@ -166,19 +150,14 @@ As a user walks into a home and scans our QR code, they are sent to a customizab
 		actions={[
 			{
 				variant: 'primary',
-				text: 'Download App',
-				href: '/#coming-soon',
-				icon: 'tabler:download',
+				text: 'Get Started',
+				href: '#',
 			},
 		]}
 	>
 		<Fragment slot='title'>
-			Ready to find your <br class='block sm:hidden' /><span
-				class='sm:whitespace-nowrap'>dream home?</span
-			>
+			Make your listings sell for you...
 		</Fragment>
-
-		<Fragment slot='subtitle'> Get started with VADO today</Fragment>
 	</CallToAction>
 </Layout>
 
