@@ -4,7 +4,6 @@ import Logo from '~/components/Logo.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
 import Button from '~/components/ui/Button.astro';
-
 import { getHomePermalink } from '~/utils/permalinks';
 import { trimSlash, getAsset } from '~/utils/permalinks';
 import type { CallToAction } from '~/types';
@@ -164,7 +163,8 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 			<div
 				class='items-center flex justify-between w-full md:w-auto'
 			>
-				<div class='flex'>
+			<!-- Toggle Theme Button -->
+				<!-- <div class='flex'>
 					{
 						showToggleTheme && (
 							<ToggleTheme iconClass='w-6 h-6 md:w-5 md:h-5 md:inline-block' />
@@ -183,7 +183,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 							</a>
 						)
 					}
-				</div>
+				</div> -->
 				{
 					actions?.length ? (
 						<span
