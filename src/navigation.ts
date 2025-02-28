@@ -30,6 +30,6 @@ export const footerData = {
 		{ text: 'Privacy Policy', href: getPermalink('/privacy') },
 	],
 	footNote: `
-    Copywright &copy; ${new Date().getFullYear()} · All rights reserved
+    Copyright &#169; ${new Date().getFullYear()} · All rights reserved
   `,
 };
