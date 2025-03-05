@@ -1,5 +1,5 @@
-import Swal from 'sweetalert2';
-import 'sweetalert2/dist/sweetalert2.min.css';
+import Swal from "sweetalert2";
+import "sweetalert2/dist/sweetalert2.min.css";
 
 /**
  * Triggers a SweetAlert2 alert with a custom message and title.
@@ -18,22 +18,23 @@ export function setupAlert(elementId, options = {}) {
 
   // Default options with a "Coming Soon" alert message
   const defaultOptions = {
-    title: 'Coming Soon!',
-    text: 'Our mobile app is currently in development. Stay tuned!',
-    icon: 'none',
-    confirmButtonText: 'OK',
-    customClass: 'coming-soon-alert',
+    title: "Coming Soon!",
+    text: "Our mobile app is currently in development. Stay tuned!",
+    icon: "none",
+    confirmButtonText: "OK",
+    customClass: "coming-soon-alert",
   };
 
-  element.addEventListener('click', () => {
+  element.addEventListener("click", () => {
     // Determine if we should use defaultOptions or the user-provided options
-    const finalOptions = Object.keys(options).length === 0 ? defaultOptions : options;
+    const finalOptions =
+      Object.keys(options).length === 0 ? defaultOptions : options;
 
     // Fire the alert. Once closed, everything resets for next time automatically.
-    Swal.fire({ ...finalOptions, icon: 'none' }).then(() => {
+    Swal.fire({ ...finalOptions, icon: "none" }).then(() => {
       // After the alert closes, you can perform any additional cleanup here if needed.
       // But since SweetAlert2 is already stateless, this step is optional.
-      Swal.close();  // Ensures it's fully closed before the next alert.
+      Swal.close(); // Ensures it's fully closed before the next alert.
     });
   });
 }

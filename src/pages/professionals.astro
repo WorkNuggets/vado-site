@@ -4,7 +4,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Brands from '~/components/widgets/Brands.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import Diagonal from '~/components/widgets/Diagonal.astro';
+import Diagonal from '~/components/widgets/Diagonal.astro'
 import Features from '~/components/widgets/Features.astro';
 
 const metadata = {
@@ -33,7 +33,7 @@ const metadata = {
 		}}
 	>
 		<Fragment slot='title'>
-			Closing Properties Without Speaking a Word
+			Closing Proprties Without Speaking a Word
 		</Fragment>
 
 		<Fragment slot='subtitle' class='text-right'>
@@ -41,234 +41,204 @@ const metadata = {
 				>Reach everyone that goes through your open houses, 5x
 				your leads and more effectively facilitate sales and
 				rentals.
-			</span>
 		</Fragment>
+	</Hero>
 
-		<!-- Diagonal Title and Paragraph Section (Connect w/5x the potential) *************** -->
+	<!-- Diagonal Title and Paragraph Section (Connect w/5x the potential) *************** -->
 
-		<Diagonal id='learn-more' titleAlign='left' paragraphAlign='right'>
-			<Fragment slot='title'>
-				<div class='-mt-10 text-3xl sm:text-4xl md:text-6xl'>
-					<span class='text-accent dark:text-white'>
-						Connect</span
-					> with 5x the potential buyers / renters as they tour
-					your open house, even if they try avoiding you
+	<Diagonal id="learn-more" titleAlign="left" paragraphAlign="right">
+  <Fragment slot="title">
+			<div class="-mt-10 text-3xl sm:text-4xl md:text-6xl">
+				<span class="text-accent dark:text-white">
+					Connect</span> with 5x the potential buyers / renters as they tour your open house, even if they try avoiding you
 				</div>
-			</Fragment>
+				</Fragment>
+				
+  <Fragment slot="paragraph">
+			Open houses are the #2 source of lead generation for rentals or home purchases. Yet, despite this, us as listing agents can only talk to maybe 20% of people who walk through the doors. Most actively try avoiding us, and stay on their phones the whole time. <b>We’re reimagining the way people tour homes, so that while they stay on their phones, you still can reach them.</b>
+  </Fragment>
+</Diagonal>
 
-			<Fragment slot='paragraph'>
-				Open houses are the #2 source of lead generation for
-				rentals or home purchases. Yet, despite this, us as
-				listing agents can only talk to maybe 20% of people who
-				walk through the doors. Most actively try avoiding us,
-				and stay on their phones the whole time. <b
-					>We’re re-imagining the way people tour homes, so
-					that while they stay on their phones, you still
-					can reach them.</b
-				>
-			</Fragment>
-		</Diagonal>
+	<!-- Facilitating Smart Follow Ups *************** -->
 
-		<!-- Facilitating Smart Follow Ups *************** -->
+	<Hero2
+	id='learn-more'
+	image={{
+		src: '~/assets/images/screenshots/tourWithRoomTabs.png',
+		alt: 'Screenshot of the phone',
+	}}
+>
+	<Fragment slot='title'>
+		<span class='text-accent dark:text-white'>
+			Facilitating smart follow-ups</span
+		>, <i>personalized</i> for every tourer
+	</Fragment>
+	<Fragment slot='subtitle'>
+As a user walks into a home and scans our QR code, they are sent to a customizable portal for the home, where they can add notes and pictures. We take note of this, and send you, the lister, smart insights, such as their thoughts and preferences, so that you can tailor your follow-ups. You don’t need to remember a thing, our app remembers it for you.
+	</Fragment>
+</Hero2>
 
-		<Hero2
-			id='learn-more'
-			image={{
-				src: '~/assets/images/screenshots/tourWithRoomTabs.png',
-				alt: 'Screenshot of the phone',
-			}}
-		>
-			<Fragment slot='title'>
-				<span class='text-accent dark:text-white'>
-					Facilitating smart follow-ups</span
-				>, <i>personalized</i> for every tourer
-			</Fragment>
-			<Fragment slot='subtitle'>
-				As a user walks into a home and scans our QR code, they
-				are sent to a customizable portal for the home, where
-				they can add notes and pictures. We take note of this,
-				and send you, the lister, smart insights, such as their
-				thoughts and preferences, so that you can tailor your
-				follow-ups. You don’t need to remember a thing, our app
-				remembers it for you.
-			</Fragment>
-		</Hero2>
+	<!-- Customer concerns you didn't know about? *************** -->
 
-		<!-- Customer concerns you didn't know about? *************** -->
+	<Hero2
+	imagePosition='left'
+	id='learn-more'
+	image={{
+		src: '~/assets/images/screenshots/Previous Living Room notes.png',
+		alt: 'Screenshot of the phone',
+	}}
+>
+	<Fragment slot='subtitle'>
+<b>Customer concerns you didn’t know about? Now you can address them quickly.</b> You know how homebuyers won’t mention their concerns or true thoughts to you? Well you can now proactively address their real thoughts, thanks to our proprietary tech, which takes into account their notes, photos taken, and other tour data to know what they’re truly thinking.
+	</Fragment>
+<Fragment slot='actions'>
+	<a id="vadoCanDoForYou" class="btn-secondary">See What VADO Can do for Your Listings</a>
+</Fragment>
+</Hero2>
 
-		<Hero2
-			imagePosition='left'
-			id='learn-more'
-			image={{
-				src: '~/assets/images/screenshots/Previous Living Room notes.png',
-				alt: 'Screenshot of the phone',
-			}}
-		>
-			<Fragment slot='subtitle'>
-				<b
-					>Customer concerns you didn’t know about? Now you
-					can address them quickly.</b
-				> You know how home buyers won’t mention their concerns or
-				true thoughts to you? Well you can now proactively address
-				their real thoughts, thanks to our proprietary tech, which
-				takes into account their notes, photos taken, and other tour
-				data to know what they’re truly thinking.
-			</Fragment>
-			<Fragment slot='actions'>
-				<a id='vadoCanDoForYou' class='btn-secondary'
-					>See What VADO Can do for Your Listings</a
-				>
-			</Fragment>
-		</Hero2>
+	<!-- Clone yourself, multiply your research ****************** -->
 
-		<!-- Clone yourself, multiply your research ****************** -->
+	<Hero2
+	imagePosition='right'
+	id='learn-more'
+	image={{
+		src: '~/assets/images/home/screenshot.png',
+		alt: 'Screenshot of the phone',
+	}}
+>
+	<Fragment slot='subtitle'>
+		<b>Clone yourself, multiply your reach.</b> We can customize the AI in our tour app so that it can sell the exact same way you sell a home. When a potential buyer asks a question, it will answer it in the exact same way you’d answer it. Talks to the client on your behalf, without you having to open your mouth 
+	</Fragment>
+<Fragment slot='actions'>
+	<a id="tryItOut" class="btn-primary">Try it out</a>
+</Fragment>
+</Hero2>
 
-		<Hero2
-			imagePosition='right'
-			id='learn-more'
-			image={{
-				src: '~/assets/images/home/screenshot.png',
-				alt: 'Screenshot of the phone',
-			}}
-		>
-			<Fragment slot='subtitle'>
-				<b>Clone yourself, multiply your reach.</b> We can customize
-				the AI in our tour app so that it can sell the exact same
-				way you sell a home. When a potential buyer asks a question,
-				it will answer it in the exact same way you’d answer it.
-				Talks to the client on your behalf, without you having to
-				open your mouth
-			</Fragment>
-			<Fragment slot='actions'>
-				<a id='tryItOut' class='btn-primary'>Try it out</a>
-			</Fragment>
-		</Hero2>
+	<!-- Features Widget *************** -->
 
-		<!-- Features Widget *************** -->
-
-		<Features
-			id='features'
-			tagline='<span class="text-[#173151]">Features</span>'
-			title='<h2 class="text-accent dark:text-white text-6xl font-bold">What VADO has to Offer</h2>'
-			subtitle='<b>VADO has everything you as a listing agent or property manager need to host a successful open house, allowing potential renters or buyers imagine their dream home</b>'
-			items={[
-				{
-					title: 'Personalized Follow-ups',
-					description:
-						'For each tourer, VADO uncovers what leads look for and recommends you the best way to reach out',
-					icon: 'tabler:mail-ai',
-				},
-				{
-					title: 'Lead Tracker',
-					description:
-						'VADO keeps track of every lead that goes through the homes, so you don’t miss anyone',
+	<Features
+		id='features'
+		tagline='<span class="text-[#173151]">Features</span>'
+		title='<h2 class="text-accent dark:text-white text-6xl font-bold">What VADO has to Offer</h2>'
+		subtitle='<b>VADO has everything you as a listing agent or property manager need to host a successful open house, allowing potential renters or buyers imagine their dream home</b>'
+		items={[
+			{
+				title: 'Personalized Follow-ups',
+				description:
+					'For each tourer, VADO uncovers what leads look for and recommends you the best way to reach out',
+				icon: 'tabler:mail-ai',
+			},
+			{
+				title: 'Lead Tracker',
+				description:
+					'VADO keeps track of every lead that goes through the homes, so you don’t miss anyone',
 					icon: 'tabler:layout-dashboard',
 				},
 				{
 					title: 'An Assistant Broker at Your Service',
 					description:
-						'VADO AI replicates you through your marketing materials, so it can sell tourers the same way you would, just through their phones',
+					'VADO AI replicates you through your marketing materials, so it can sell tourers the same way you would, just through their phones',
 					icon: 'tabler:message-chatbot',
-				},
-				{
-					title: 'Seamless Setup',
-					description:
-						'All you need to do to setup the open house app is upload all previously made marketing materials for the home. No extra work needed',
-					icon: 'tabler:settings-cog',
-				},
-			]}
-		/>
+			},
+			{
+				title: 'Seamless Setup',
+				description:
+				'All you need to do to setup the open house app is upload all previously made marketing materials for the home. No extra work needed',
+				icon: 'tabler:settings-cog',
+			},
+		]}
+	/>
 
-		<!-- Brands Widget ****************** -->
+	<!-- Brands Widget ****************** -->
 
-		<Brands
-			title='Work with our team of DISRUPTORS from and backed by world-class institutions'
-			icons={[]}
-			images={[
-				{
-					src: '~/assets/images/brands/berkeley.png',
-					alt: 'Berkeley',
-				},
-				{
-					src: '~/assets/images/brands/hp.png',
-					alt: 'HP',
-				},
-				{
-					src: '~/assets/images/brands/intel.png',
-					alt: 'Intel',
-				},
-				{
-					src: '~/assets/images/brands/microsoft.png',
-					alt: 'Microsoft',
-				},
-				{
-					src: '~/assets/images/brands/penn.png',
-					alt: 'Penn State',
-				},
-				{
-					src: '~/assets/images/brands/steam.png',
-					alt: 'Steam',
-				},
-			]}
-		/>
+	<Brands
+		title='Work with our team of DISRUPTORS from and backed by world class institutions'
+		icons={[]}
+		images={[
+			{
+				src: '~/assets/images/brands/berkeley.png',
+				alt: 'Berkeley',
+			},
+			{
+				src: '~/assets/images/brands/hp.png',
+				alt: 'HP',
+			},
+			{
+				src: '~/assets/images/brands/intel.png',
+				alt: 'Intel',
+			},
+			{
+				src: '~/assets/images/brands/microsoft.png',
+				alt: 'Microsoft',
+			},
+			{
+				src: '~/assets/images/brands/penn.png',
+				alt: 'Penn State',
+			},
+			{
+				src: '~/assets/images/brands/steam.png',
+				alt: 'Steam',
+			},
+		]}
+	/>
 
-		<!-- CallToAction Widget *********** -->
+	<!-- CallToAction Widget *********** -->
 
-		<CallToAction id='coming-soon'>
-			<Fragment slot='title'>
-				Make your listings sell for you...
-			</Fragment>
-			<Fragment slot='subtitle'>
-				<a id='cta-link' class='btn-primary'>Get Started</a>
-			</Fragment>
-		</CallToAction>
-	</Hero>
+	<CallToAction id='coming-soon'>
+  <Fragment slot='title'>
+    Make your listings sell for you...
+  </Fragment>
+  <Fragment slot='subtitle'>
+    <a id="cta-link" class='btn-primary'>Get Started</a>
+  </Fragment>
+</CallToAction>
+</Layout>
 
-	<style is:global>
-		.coming-soon-alert :is(button) {
-			background-color: var(--aw-color-primary);
-		}
+<style is:global>
+	.coming-soon-alert :is(button) {
+		background-color: var(--aw-color-primary);
+	}
 
-		.coming-soon-alert div:where(.swal2-icon).swal2-info {
-			border: 1px solid var(--aw-color-primary);
-			color: var(--aw-color-primary);
-		}
+	.coming-soon-alert div:where(.swal2-icon).swal2-info {
+		border: 1px solid var(--aw-color-primary);
+		color: var(--aw-color-primary);
+	}
 
-		.dark .coming-soon-alert {
-			background-color: theme('colors.slate.600');
-			color: white;
-		}
-		.dark .coming-soon-alert :is(button) {
-			background-color: var(--aw-color-accent);
-		}
+	.dark .coming-soon-alert {
+		background-color: theme('colors.slate.600');
+		color: white;
+	}
+	.dark .coming-soon-alert :is(button) {
+		background-color: var(--aw-color-accent);
+	}
 
-		.dark .coming-soon-alert div:where(.swal2-icon).swal2-info {
-			border: 1px solid var(--aw-color-accent);
-			color: var(--aw-color-accent);
-		}
-	</style>
+	.dark .coming-soon-alert div:where(.swal2-icon).swal2-info {
+		border: 1px solid var(--aw-color-accent);
+		color: var(--aw-color-accent);
+	}
+</style>
 
-	<script>
-		import { setupAlert } from '~/utils/showAlert';
+<script>
+	import { setupAlert } from '~/utils/showAlert';
 
-		const alertConfig = {
-			title: '',
-			padding: '2em',
-			icon: 'none',
-			html: `
+	const alertConfig = {
+    title: '',
+		padding: "2em",
+    icon: 'none',
+		html: `
     <h2 class="text-3xl font-bold">The future of open houses is almost ready for launch!</h2>
 				<br />
 				<h2 class="text-3xl font-bold">Be the first to know</h2>
 				<br />
 				<br />
-				<a href='https://forms.gle/Kf2yXRqwVniwkfkJA' target='_blank' class='btn-secondary'>Join Wait List</a>
+				<a href='https://forms.gle/Kf2yXRqwVniwkfkJA' target='_blank' class='btn-secondary'>Join Waitlist</a>
   `,
-			showConfirmButton: false,
-		};
+icon: 'none',
+showConfirmButton: false,
+	};
 
-		setupAlert('tryItOut', alertConfig);
-		setupAlert('vadoCanDoForYou', alertConfig);
-		setupAlert('cta-link', alertConfig);
-		setupAlert('navButton', alertConfig);
-	</script></Layout
->
+	setupAlert("tryItOut", alertConfig);
+	setupAlert("vadoCanDoForYou", alertConfig);
+	setupAlert("cta-link", alertConfig);
+	setupAlert("navButton", alertConfig);
+</script>
