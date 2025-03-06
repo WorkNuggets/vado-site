@@ -1,11 +1,12 @@
-import js from '@eslint/js';
-import typescriptParser from '@typescript-eslint/parser';
-import astroEslintParser from 'astro-eslint-parser';
-import eslintPluginAstro from 'eslint-plugin-astro';
-import globals from 'globals';
-import tseslint from 'typescript-eslint';
+import js from '@eslint/js'
+import typescriptParser from '@typescript-eslint/parser'
+import astroEslintParser from 'astro-eslint-parser'
+import type { FlatConfig } from 'eslint'
+import eslintPluginAstro from 'eslint-plugin-astro'
+import globals from 'globals'
+import tseslint from 'typescript-eslint'
 
-export default [
+const config: FlatConfig[] = [
   js.configs.recommended,
   ...eslintPluginAstro.configs['flat/recommended'],
   ...tseslint.configs.recommended,
@@ -34,14 +35,13 @@ export default [
     },
   },
   {
-    // Define the configuration for `<script>` tag.
-    // Script in `<script>` is assigned a virtual file name with the `.js` extension.
+    // TypeScript rules
     files: ['**/*.{ts,tsx}', '**/*.astro/*.js'],
     languageOptions: {
       parser: typescriptParser,
     },
     rules: {
-      // Note: you must disable the base rule as it can report incorrect errors
+      // Disable the base rule as it can report incorrect errors
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': [
         'error',
@@ -56,4 +56,6 @@ export default [
   {
     ignores: ['dist', 'node_modules', '.github', 'types.generated.d.ts', '.astro'],
   },
-];
+]
+
+export default config
