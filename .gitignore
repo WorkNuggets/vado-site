@@ -1,19 +1,11 @@
+# Build and Production Output
+dist/
+.output/
+
 # Dependencies
-/node_modules
 node_modules/
-node_modules
-node_modules/*
 .pnp/
 .pnp.js
-
-# Production build
-/dist/
-dist
-
-# Local environment variables
-.env
-.env.local
-.env.*.local
 
 # Logs
 npm-debug.log*
@@ -22,30 +14,33 @@ yarn-error.log*
 pnpm-debug.log*
 pnpm-lock.yaml
 
-# Parcel cache (if you're using Parcel)
-.cache/
+# Environment Variables
+.env
+.env.local
+.env.*.local
+.env.production
 
-# Astro telemetry data
+# Astro
 .astro/
-.astro
 
-# Output of the TypeScript compiler
-*.tsbuildinfo
+# Cache and Temporary Files
+.cache/  # Parcel cache (if using Parcel)
+*.tsbuildinfo  # TypeScript compiler output
 
-# MacOS files
+# macOS
 .DS_Store
 
-# Editor directories and files
+# Editor and IDE Configs
 .idea/
 .vscode/
 *.sublime-workspace
 
-# Optional: lockfiles (choose the one relevant to your package manager)
+# Lockfiles
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
-node_modules/.modules.yaml
-node_modules/.modules.yaml
+
+# Node Modules Metadata
 node_modules/.modules.yaml
 node_modules/.pnpm/lock.yaml
 node_modules/.vite/deps/_metadata.json
