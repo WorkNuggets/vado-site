@@ -218,6 +218,15 @@ const metadata = {
 
 <script>
 	import { setupAlert } from '~/utils/showAlert';
-	setupAlert('ctaButtonNav');
-	setupAlert('ctaButtonHome');
+	
+ function initAlerts() {
+    setupAlert('navButtonHome');
+    setupAlert('ctaButtonHome');
+  }
+
+  initAlerts();
+
+  document.addEventListener('astro:after-swap', () => {
+    initAlerts();
+  });
 </script>

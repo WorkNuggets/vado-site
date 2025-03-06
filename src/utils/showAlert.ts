@@ -3,8 +3,7 @@ import "sweetalert2/dist/sweetalert2.min.css";
 
 /**
  * Attaches a SweetAlert2 trigger to an element and ensures proper event management.
- * - Removes the event listener after execution to prevent duplicate bindings.
- * - Re-attaches it when needed.
+ * - Safely removes any previous event listener before re-attaching a new one.
  *
  * @param {string} elementId - The ID of the element that will trigger the alert on click.
  * @param {SweetAlertOptions} options - Configuration options for the alert (title, text, icon, etc.).
@@ -15,7 +14,7 @@ export function setupAlert(elementId: string, options: SweetAlertOptions = {}) {
     console.warn(`Element with ID "${elementId}" not found.`);
     return;
   }
-
+  
   const defaultOptions: SweetAlertOptions = {
     title: "Coming Soon!",
     text: "Our mobile app is currently in development. Stay tuned!",
@@ -25,22 +24,12 @@ export function setupAlert(elementId: string, options: SweetAlertOptions = {}) {
       popup: "coming-soon-alert",
     },
   };
-
+  
+  const finalOptions = Object.keys(options).length ? options : defaultOptions;
   const clickHandler = () => {
-    const finalOptions = Object.keys(options).length ? options : defaultOptions;
-
-    Swal.fire({ ...finalOptions })
-      .then(() => {
-        Swal.close();
-      })
-      .finally(() => {
-        element.removeEventListener("click", clickHandler);
-        setTimeout(() => {
-          element.addEventListener("click", clickHandler);
-        }, 300);
-      });
+    Swal.fire(finalOptions);
   };
-
+  
   element.removeEventListener("click", clickHandler);
   element.addEventListener("click", clickHandler);
 }

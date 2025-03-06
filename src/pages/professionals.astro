@@ -186,7 +186,15 @@ const metadata = {
     `,
 		showConfirmButton: false,
 	};
+	
+ function initAlerts() {
+				setupAlert('navButtonPro', alertConfig);
+				setupAlert('cta-link', alertConfig);
+  }
 
-	setupAlert('cta-link', alertConfig);
-	setupAlert('navButton', alertConfig);
+  initAlerts();
+
+  document.addEventListener('astro:after-swap', () => {
+    initAlerts();
+  });
 </script>
