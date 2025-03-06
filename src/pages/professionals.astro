@@ -60,11 +60,11 @@ const metadata = {
 			can only talk to maybe 20% of people who walk through the
 			doors. Most actively try avoiding us and stay on their phones
 			the whole time.
-			<b
-				>We’re reimagining the way people tour homes so that
+			<b>
+				We’re reimagining the way people tour homes so that
 				while they stay on their phones, you can still reach
-				them.</b
-			>
+				them.
+			</b>
 		</Fragment>
 	</Diagonal>
 
@@ -169,14 +169,13 @@ const metadata = {
 	}
 </style>
 
-<!-- JavaScript -->
+<!-- Use the new attribute: client:load -->
 <script>
 	import { setupAlert } from '~/utils/showAlert';
 
 	const alertConfig = {
 		title: '',
 		padding: '2em',
-		icon: 'none',
 		html: `
       <h2 class="text-3xl font-bold">The future of open houses is almost ready for launch!</h2>
       <br />
@@ -188,8 +187,6 @@ const metadata = {
 		showConfirmButton: false,
 	};
 
-	setupAlert('tryItOut', alertConfig);
-	setupAlert('vadoCanDoForYou', alertConfig);
 	setupAlert('cta-link', alertConfig);
 	setupAlert('navButton', alertConfig);
 </script>
