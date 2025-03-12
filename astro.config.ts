@@ -1,23 +1,19 @@
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-import { defineConfig } from 'astro/config';
-
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import type { AstroIntegration } from 'astro';
-import compress from 'astro-compress';
+import { default as compress } from 'astro-compress';
 import icon from 'astro-icon';
-
-import astrowind from './vendor/integration';
-
+import { defineConfig } from 'astro/config';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import {
   lazyImagesRehypePlugin,
   readingTimeRemarkPlugin,
   responsiveTablesRehypePlugin,
 } from './src/utils/frontmatter';
+import astrowind from './vendor/integration';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

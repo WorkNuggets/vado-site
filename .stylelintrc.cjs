@@ -8,6 +8,7 @@ module.exports = {
         ignoreAtRules: ['tailwind', 'apply', 'layer', 'variants', 'responsive'],
       },
     ],
+    'at-rule-no-deprecated': null,
     'shorthand-property-no-redundant-values': true,
     'declaration-property-value-disallowed-list': {
       'margin-top': ['.*'],
