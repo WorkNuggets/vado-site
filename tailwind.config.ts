@@ -1,7 +1,7 @@
-import typographyPlugin from '@tailwindcss/typography'
-import type { Config } from 'tailwindcss'
-import defaultTheme from 'tailwindcss/defaultTheme'
-import plugin from 'tailwindcss/plugin'
+import typographyPlugin from '@tailwindcss/typography';
+import type { Config } from 'tailwindcss';
+import defaultTheme from 'tailwindcss/defaultTheme';
+import plugin from 'tailwindcss/plugin';
 
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,json,md,mdx,svelte,ts,tsx,vue}'],
@@ -15,18 +15,9 @@ export default {
         muted: 'var(--aw-color-text-muted)',
       },
       fontFamily: {
-        sans: [
-          'var(--aw-font-sans, ui-sans-serif)',
-          ...defaultTheme.fontFamily.sans,
-        ],
-        serif: [
-          'var(--aw-font-serif, ui-serif)',
-          ...defaultTheme.fontFamily.serif,
-        ],
-        heading: [
-          'var(--aw-font-heading, ui-sans-serif)',
-          ...defaultTheme.fontFamily.sans,
-        ],
+        sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
+        serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
+        heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
       },
       animation: {
         fade: 'fadeInUp 1s both',
@@ -42,8 +33,8 @@ export default {
   plugins: [
     typographyPlugin,
     plugin(({ addVariant }) => {
-      addVariant('intersect', '&:not([no-intersect])')
+      addVariant('intersect', '&:not([no-intersect])');
     }),
   ],
   darkMode: 'class',
-} satisfies Config
+} satisfies Config;

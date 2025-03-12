@@ -1,8 +1,8 @@
-import type { PlaywrightTestConfig } from "@playwright/test";
-import { devices } from "@playwright/test";
+import type { PlaywrightTestConfig } from '@playwright/test';
+import { devices } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
-  testDir: "./tests",
+  testDir: './tests',
   timeout: 30 * 1000,
   expect: {
     timeout: 5000,
@@ -11,35 +11,35 @@ const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: "html",
+  reporter: 'html',
   use: {
     actionTimeout: 0,
-    trace: "on-first-retry",
+    trace: 'on-first-retry',
   },
   projects: [
     {
-      name: "chromium",
+      name: 'chromium',
       use: {
-        ...devices["Desktop Chrome"],
+        ...devices['Desktop Chrome'],
       },
     },
 
     {
-      name: "firefox",
+      name: 'firefox',
       use: {
-        ...devices["Desktop Firefox"],
+        ...devices['Desktop Firefox'],
       },
     },
 
     {
-      name: "webkit",
+      name: 'webkit',
       use: {
-        ...devices["Desktop Safari"],
+        ...devices['Desktop Safari'],
       },
     },
   ],
   webServer: {
-    command: "yarn && yarn start",
+    command: 'yarn && yarn start',
     port: 8000,
     timeout: 120 * 1000,
     reuseExistingServer: true,

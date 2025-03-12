@@ -1,5 +1,5 @@
-import Swal, { type SweetAlertOptions } from "sweetalert2";
-import "sweetalert2/dist/sweetalert2.min.css";
+import Swal, { type SweetAlertOptions } from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 /**
  * Attaches a SweetAlert2 trigger to an element and ensures proper event management.
@@ -14,22 +14,22 @@ export function setupAlert(elementId: string, options: SweetAlertOptions = {}) {
     console.warn(`Element with ID "${elementId}" not found.`);
     return;
   }
-  
+
   const defaultOptions: SweetAlertOptions = {
-    title: "Coming Soon!",
-    text: "Our mobile app is currently in development. Stay tuned!",
+    title: 'Coming Soon!',
+    text: 'Our mobile app is currently in development. Stay tuned!',
     icon: undefined,
-    confirmButtonText: "OK",
+    confirmButtonText: 'OK',
     customClass: {
-      popup: "coming-soon-alert",
+      popup: 'coming-soon-alert',
     },
   };
-  
+
   const finalOptions = Object.keys(options).length ? options : defaultOptions;
   const clickHandler = () => {
     Swal.fire(finalOptions);
   };
-  
-  element.removeEventListener("click", clickHandler);
-  element.addEventListener("click", clickHandler);
+
+  element.removeEventListener('click', clickHandler);
+  element.addEventListener('click', clickHandler);
 }

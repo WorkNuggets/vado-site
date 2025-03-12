@@ -15,5 +15,12 @@
     "module": "nodenext"
   },
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist/", "tailwind.config.ts", "jest.config.ts", ".stylelintrc.ts", "playwright.config.ts", "webpack.config.ts"]
+  "exclude": [
+    "dist/",
+    "tailwind.config.ts",
+    "jest.config.ts",
+    ".stylelintrc.ts",
+    "playwright.config.ts",
+    "webpack.config.ts"
+  ]
 }
