@@ -18,8 +18,7 @@ export function setupAlert(elementId: string, options: SweetAlertOptions = {}) {
   const defaultOptions: SweetAlertOptions = {
     title: 'Coming Soon!',
     text: 'Our mobile app is currently in development. Stay tuned!',
-    icon: undefined,
-    confirmButtonText: 'OK',
+    confirmButtonText: 'Okay',
     customClass: {
       popup: 'coming-soon-alert',
     },

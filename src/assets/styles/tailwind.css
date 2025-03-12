@@ -111,3 +111,24 @@ html:not(.dark) .moon-icon {
 .dd *:first-child {
   margin-top: 0;
 }
+
+/* Sweet Alert */
+div:where(.swal2-container).swal2-center>.swal2-popup {
+  @apply dark:bg-slate-800 dark:text-white;
+}
+
+div:where(.swal2-container).swal2-center>.swal2-popup button {
+  @apply dark:bg-[var(--aw-color-secondary)] transition-all;
+}
+
+div:where(.swal2-container).swal2-center>.swal2-popup button:hover {
+  @apply dark:bg-[var(--aw-color-primary)];
+}
+
+.swal2-html-container {
+  @apply font-semibold
+}
+
+.swal2-confirm.swal2-styled {
+  @apply py-2 px-8 rounded-full text-lg font-semibold my-5
+}
