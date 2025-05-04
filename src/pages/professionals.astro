@@ -21,9 +21,8 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Try VADO!',
-        id: 'tryVADO',
-        href: '/professionals#learn-more',
-        icon: 'tabler:circle-chevron-down',
+        id: 'tryVADOButton',
+        href: '#',
       },
     ]}
     image={{
@@ -56,7 +55,7 @@ const metadata = {
       this, as listing agents, we can only talk to maybe 20% of people who walk through the doors.
       Most actively try avoiding us and stay on their phones the whole time.
       <b>
-        We’re reimagining the way people tour homes so that while they stay on their phones, you can
+        We're reimagining the way people tour homes so that while they stay on their phones, you can
         still reach them.
       </b>
     </Fragment>
@@ -79,7 +78,7 @@ const metadata = {
       As a user walks into a home and scans our QR code, they are sent to a customizable portal for
       the home, where they can add notes and pictures. We take note of this and send you, the
       lister, smart insights, such as their thoughts and preferences, so you can tailor your
-      follow-ups. You don’t need to remember a thing; our app remembers it for you.
+      follow-ups. You don't need to remember a thing; our app remembers it for you.
     </Fragment>
   </Hero2>
 
@@ -99,7 +98,7 @@ const metadata = {
       {
         title: 'Lead Tracker',
         description:
-          'VADO keeps track of every lead that goes through the homes, so you don’t miss anyone',
+          "VADO keeps track of every lead that goes through the homes, so you don't miss anyone",
         icon: 'tabler:layout-dashboard',
       },
       {
@@ -132,10 +131,7 @@ const metadata = {
         alt: 'Microsoft',
       },
       { src: '~/assets/images/brands/penn.png', alt: 'Penn State' },
-      {
-        src: '~/assets/images/brands/kw.png',
-        alt: 'Keller Williams',
-      },
+      { src: '~/assets/images/brands/steam.png', alt: 'Steam' },
     ]}
   />
 
@@ -164,13 +160,14 @@ const metadata = {
   }
 </style>
 
-<!-- Use the new attribute: client:load -->
 <script>
-  import { setupAlert } from '~/utils/showAlert';
+  import Swal from 'sweetalert2';
+  import 'sweetalert2/dist/sweetalert2.min.css';
 
   const alertConfig = {
     title: '',
     padding: '2em',
+    icon: 'none',
     html: `
       <h2 class="text-3xl font-bold">The future of open houses is almost ready for launch!</h2>
       <br />
@@ -180,16 +177,45 @@ const metadata = {
       <a href='https://forms.gle/Kf2yXRqwVniwkfkJA' target='_blank' class='btn-secondary'>Join Waitlist</a>
     `,
     showConfirmButton: false,
+    customClass: {
+      popup: 'coming-soon-alert',
+    },
   };
 
-  function initAlerts() {
-    setupAlert('navButtonPro', alertConfig);
-    setupAlert('cta-link', alertConfig);
+  function handleClick(e) {
+    e.preventDefault();
+    Swal.fire(alertConfig);
   }
 
-  initAlerts();
+  function setupButtons() {
+    // Close any existing open SweetAlert
+    Swal.close();
 
-  document.addEventListener('astro:after-swap', () => {
-    initAlerts();
-  });
+    // Setup navigation button
+    const navBtn = document.getElementById('navButtonPro');
+    if (navBtn) {
+      navBtn.removeEventListener('click', handleClick);
+      navBtn.addEventListener('click', handleClick);
+    }
+
+    // Setup hero button
+    const heroBtn = document.getElementById('tryVADOButton');
+    if (heroBtn) {
+      heroBtn.removeEventListener('click', handleClick);
+      heroBtn.addEventListener('click', handleClick);
+    }
+
+    // Setup CTA link
+    const ctaLink = document.getElementById('cta-link');
+    if (ctaLink) {
+      ctaLink.removeEventListener('click', handleClick);
+      ctaLink.addEventListener('click', handleClick);
+    }
+  }
+
+  // Initialize when page loads
+  document.addEventListener('DOMContentLoaded', setupButtons);
+
+  // Reinitialize after Astro page transitions
+  document.addEventListener('astro:after-swap', setupButtons);
 </script>
