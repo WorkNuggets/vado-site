@@ -1,0 +1,219 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Brands from '~/components/widgets/Brands.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Diagonal from '~/components/widgets/Diagonal.astro';
+import Features from '~/components/widgets/Features.astro';
+
+const metadata = {
+  title: 'VADO - Close Properties Without Speaking a Word',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget -->
+  <Hero
+    id="homes"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Try VADO!',
+        id: 'tryVADOButton',
+        href: '#',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/suburb.png',
+      alt: 'Aerial shot rendered of a neighborhood',
+    }}
+  >
+    <Fragment slot="title">Imagine every open house turning into a deal</Fragment>
+
+    <Fragment slot="subtitle" class="text-right">
+      <span class="text-black dark:text-white">
+        Reach everyone that goes through your open houses, 5x your leads, and more effectively
+        facilitate sales and rentals.
+      </span>
+    </Fragment>
+  </Hero>
+
+  <!-- Diagonal Section -->
+  <Diagonal id="learn-more" titleAlign="left" paragraphAlign="right">
+    <Fragment slot="title">
+      <div class="-mt-10 text-3xl sm:text-4xl md:text-6xl">
+        <span class="text-accent dark:text-white">Connect</span>
+        with 5x more clients, even the ones that avoid you
+      </div>
+    </Fragment>
+
+    <Fragment slot="paragraph">
+      Open houses are prime opportunities, yet many visitors slip away unnoticed. <br /><b
+        >Vado ensures you connect with every guest</b
+      >. Capturing their interest through their smartphones and turning casual visitors into serious
+      leads.
+    </Fragment>
+  </Diagonal>
+
+  <!-- Hero2 - Smart Follow Ups -->
+  <Hero2
+    id="learn-more"
+    image={{
+      src: '~/assets/images/screenshots/tourWithRoomTabs.png',
+      alt: 'Screenshot of the phone',
+    }}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">Facilitating smart follow-ups</span>, <i
+        >personalized</i
+      > for every tourer
+    </Fragment>
+    <Fragment slot="subtitle">
+      As visitors explore, they scan a QR code leading to a tailored property portal. They can jot
+      down notes, snap photos, and express preferences. Vado's AI analyzes this data, providing you
+      with crafted personalized follow-up templates that resonate.
+    </Fragment>
+  </Hero2>
+
+  <!-- Features Section -->
+  <Features
+    id="features"
+    tagline='<span class="text-[#173151]">Features</span>'
+    title='<h2 class="text-accent dark:text-white text-6xl font-bold">What VADO has to Offer</h2>'
+    subtitle="<b>VADO has everything you need as a listing agent or property manager to host a successful open house, allowing potential renters or buyers to imagine their dream home.</b>"
+    items={[
+      {
+        title: 'Personalized Follow-ups',
+        description:
+          'For each tourer, VADO uncovers what leads look for and recommends you the best way to reach out',
+        icon: 'tabler:mail-ai',
+      },
+      {
+        title: 'Lead Tracker',
+        description:
+          "VADO keeps track of every lead that goes through the homes, so you don't miss anyone",
+        icon: 'tabler:layout-dashboard',
+      },
+      {
+        title: 'An Assistant Broker at Your Service',
+        description:
+          'VADO AI replicates you through your marketing materials, so it can sell tourers the same way you would—just through their phones.',
+        icon: 'tabler:message-chatbot',
+      },
+      {
+        title: 'Seamless Setup',
+        description:
+          'All you need to do to set up the open house app is upload all previously made marketing materials for the home. No extra work needed.',
+        icon: 'tabler:settings-cog',
+      },
+    ]}
+  />
+
+  <!-- Brands Widget -->
+  <Brands
+    title="Work with our team of DISRUPTORS from and backed by world-class institutions"
+    images={[
+      {
+        src: '~/assets/images/brands/berkeley.png',
+        alt: 'Berkeley',
+      },
+      { src: '~/assets/images/brands/hp.png', alt: 'HP' },
+      { src: '~/assets/images/brands/intel.png', alt: 'Intel' },
+      {
+        src: '~/assets/images/brands/microsoft.png',
+        alt: 'Microsoft',
+      },
+      { src: '~/assets/images/brands/penn.png', alt: 'Penn State' },
+      {
+        src: '~/assets/images/brands/kw.png',
+        alt: 'Keller Williams',
+      },
+    ]}
+  />
+
+  <!-- Call to Action -->
+  <CallToAction id="coming-soon">
+    <Fragment slot="title">Make your listings sell for you</Fragment>
+    <Fragment slot="subtitle">
+      <a id="cta-link" class="btn-primary">Get Started</a>
+    </Fragment>
+  </CallToAction>
+</Layout>
+
+<!-- Global Styles -->
+<style is:global>
+  .coming-soon-alert button {
+    background-color: var(--aw-color-primary);
+  }
+
+  .dark .coming-soon-alert {
+    background-color: theme('colors.slate.600');
+    color: white;
+  }
+
+  .dark .coming-soon-alert button {
+    background-color: var(--aw-color-accent);
+  }
+</style>
+
+<script>
+  import Swal from 'sweetalert2';
+  import 'sweetalert2/dist/sweetalert2.min.css';
+
+  const alertConfig = {
+    title: '',
+    padding: '2em',
+    icon: 'none',
+    html: `
+      <h2 class="text-3xl font-bold">The future of open houses is almost ready for launch!</h2>
+      <br />
+      <h2 class="text-3xl font-bold">Be the first to know</h2>
+      <br />
+      <br />
+      <a href='https://forms.gle/Kf2yXRqwVniwkfkJA' target='_blank' class='btn-secondary'>Join Waitlist</a>
+    `,
+    showConfirmButton: false,
+    customClass: {
+      popup: 'coming-soon-alert',
+    },
+  };
+
+  function handleClick(e) {
+    e.preventDefault();
+    Swal.fire(alertConfig);
+  }
+
+  function setupButtons() {
+    // Close any existing open SweetAlert
+    Swal.close();
+
+    // Setup navigation button
+    const navBtn = document.getElementById('navButtonPro');
+    if (navBtn) {
+      navBtn.removeEventListener('click', handleClick);
+      navBtn.addEventListener('click', handleClick);
+    }
+
+    // Setup hero button
+    const heroBtn = document.getElementById('tryVADOButton');
+    if (heroBtn) {
+      heroBtn.removeEventListener('click', handleClick);
+      heroBtn.addEventListener('click', handleClick);
+    }
+
+    // Setup CTA link
+    const ctaLink = document.getElementById('cta-link');
+    if (ctaLink) {
+      ctaLink.removeEventListener('click', handleClick);
+      ctaLink.addEventListener('click', handleClick);
+    }
+  }
+
+  // Initialize when page loads
+  document.addEventListener('DOMContentLoaded', setupButtons);
+
+  // Reinitialize after Astro page transitions
+  document.addEventListener('astro:after-swap', setupButtons);
+</script>

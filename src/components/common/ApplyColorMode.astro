@@ -1,21 +1,21 @@
 ---
-import { UI } from 'astrowind:config';
+import { UI } from "astrowind:config";
 
 // TODO: This code is temporary
 ---
 
 <script is:inline>
   function applyTheme(theme) {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }
 
-  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    applyTheme('dark');
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    applyTheme("dark");
   } else {
-    applyTheme('light');
+    applyTheme("light");
   }
 </script>

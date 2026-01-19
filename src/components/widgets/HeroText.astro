@@ -1,6 +1,6 @@
 ---
-import type { CallToAction } from '~/types';
-import Button from '~/components/ui/Button.astro';
+import type { CallToAction } from "~/types";
+import Button from "~/components/ui/Button.astro";
 
 export interface Props {
   title?: string;
@@ -12,18 +12,18 @@ export interface Props {
 }
 
 const {
-  title = await Astro.slots.render('title'),
-  subtitle = await Astro.slots.render('subtitle'),
+  title = await Astro.slots.render("title"),
+  subtitle = await Astro.slots.render("subtitle"),
   tagline,
-  content = await Astro.slots.render('content'),
-  callToAction = await Astro.slots.render('callToAction'),
-  callToAction2 = await Astro.slots.render('callToAction2'),
+  content = await Astro.slots.render("content"),
+  callToAction = await Astro.slots.render("callToAction"),
+  callToAction2 = await Astro.slots.render("callToAction2"),
 } = Astro.props;
 ---
 
 <section class="relative md:-mt-[76px] not-prose">
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+  <div class="relative max-w-5xl w-[85vw] mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
     <div class="py-12 md:py-20 pb-8 md:pb-8">
       <div class="text-center max-w-5xl mx-auto">
@@ -58,7 +58,7 @@ const {
             {
               callToAction && (
                 <div class="flex w-full sm:w-auto">
-                  {typeof callToAction === 'string' ? (
+                  {typeof callToAction === "string" ? (
                     <Fragment set:html={callToAction} />
                   ) : (
                     <Button variant="primary" {...callToAction} />
@@ -69,7 +69,7 @@ const {
             {
               callToAction2 && (
                 <div class="flex w-full sm:w-auto">
-                  {typeof callToAction2 === 'string' ? (
+                  {typeof callToAction2 === "string" ? (
                     <Fragment set:html={callToAction2} />
                   ) : (
                     <Button {...callToAction2} />

@@ -1,14 +1,26 @@
-import getReadingTime from 'reading-time';
+import type { MarkdownHeading, RehypePlugin, RemarkPlugin } from '@astrojs/markdown-remark';
 import { toString } from 'mdast-util-to-string';
+import getReadingTime from 'reading-time';
 import { visit } from 'unist-util-visit';
-import type { MarkdownAstroData, RehypePlugin, RemarkPlugin } from '@astrojs/markdown-remark';
+
+interface AstroProps {
+  astro?: {
+    headings?: MarkdownHeading[];
+    localImagePaths?: string[];
+    remoteImagePaths?: string[];
+  };
+  frontmatter?: Record<string, unknown>;
+}
 
 export const readingTimeRemarkPlugin: RemarkPlugin = () => {
   return function (tree, file) {
     const textOnPage = toString(tree);
     const readingTime = Math.ceil(getReadingTime(textOnPage).minutes);
 
-    (file.data.astro as MarkdownAstroData).frontmatter.readingTime = readingTime;
+    const astroProps = file?.data?.astro as AstroProps;
+    if (astroProps?.frontmatter) {
+      astroProps.frontmatter.readingTime = readingTime;
+    }
   };
 };
 

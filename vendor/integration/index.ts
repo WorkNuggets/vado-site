@@ -1,7 +1,6 @@
+import type { AstroConfig, AstroIntegration } from 'astro';
 import fs from 'node:fs';
 import os from 'node:os';
-import type { AstroConfig, AstroIntegration } from 'astro';
-
 import configBuilder, { type Config } from './utils/configBuilder';
 import loadConfig from './utils/loadConfig';
 
@@ -90,20 +89,31 @@ export default ({ config: _themeConfig = 'src/config.yaml' } = {}): AstroIntegra
           const sitemapExists = fs.existsSync(sitemapFile);
 
           if (hasIntegration && sitemapExists) {
-            const robotsTxt = fs.readFileSync(robotsTxtFile, { encoding: 'utf8', flag: 'a+' });
+            const robotsTxt = fs.readFileSync(robotsTxtFile, {
+              encoding: 'utf8',
+              flag: 'a+',
+            });
             const sitemapUrl = new URL(sitemapName, String(new URL(cfg.base, cfg.site)));
             const pattern = /^Sitemap:(.*)$/m;
 
             if (!pattern.test(robotsTxt)) {
-              fs.writeFileSync(robotsTxtFileInOut, `${robotsTxt}${os.EOL}${os.EOL}Sitemap: ${sitemapUrl}`, {
-                encoding: 'utf8',
-                flag: 'w',
-              });
+              fs.writeFileSync(
+                robotsTxtFileInOut,
+                `${robotsTxt}${os.EOL}${os.EOL}Sitemap: ${sitemapUrl}`,
+                {
+                  encoding: 'utf8',
+                  flag: 'w',
+                }
+              );
             } else {
-              fs.writeFileSync(robotsTxtFileInOut, robotsTxt.replace(pattern, `Sitemap: ${sitemapUrl}`), {
-                encoding: 'utf8',
-                flag: 'w',
-              });
+              fs.writeFileSync(
+                robotsTxtFileInOut,
+                robotsTxt.replace(pattern, `Sitemap: ${sitemapUrl}`),
+                {
+                  encoding: 'utf8',
+                  flag: 'w',
+                }
+              );
             }
           }
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
